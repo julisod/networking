@@ -10,7 +10,7 @@ const screenOptions = ({ route }) => ({
   tabBarIcon: () => {
     if (route.name === 'Recipes') {
       return <MaterialCommunityIcons name="food-variant" size={24} color="black" />;
-    } else if (route.name === 'Currency converter') {
+    } else if (route.name === 'Currency') {
       //return <Fontisto name="money-symbol" size={24} color="black" />
       return <MaterialIcons name="attach-money" size={24} color="black" />
     }
@@ -24,7 +24,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen name="Recipes" component={Recipes} />
-        <Tab.Screen name="Currency converter" component={Currency} />
+        <Tab.Screen name="Currency" component={Currency} />
       </Tab.Navigator>
     </NavigationContainer>
   );

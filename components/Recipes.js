@@ -22,6 +22,7 @@ export default function Recipes() {
       <StatusBar style="auto" />
       <View style={styles.search}>
         <Input
+          style={{marginTop: 25, paddingLeft: 4}}
           value={text}
           placeholder="Search by ingredient..."
           leftIcon={{ name: 'search' }}
@@ -33,17 +34,17 @@ export default function Recipes() {
         data={recipes}
         keyExtractor={(item,index) => index.toString()}
         renderItem={({item}) =>
-        <View>
-          <Text style={{fontSize:18, fontWeight: "bold"}}>
+        <View style={{width: "95%"}}>
+          <Text style={{fontSize:18, fontWeight: "bold", textAlign: "center"}}>
             {item.strMeal}
           </Text>
           <Image
-            style={{width: 100, height: 100}}
+            style={styles.image}
             source={{
               uri: item.strMealThumb
             }}
           />
-          </View>}
+        </View>}
       /> 
     </View>
   );
@@ -58,8 +59,17 @@ const styles = StyleSheet.create({
   search: {
     width: "70%",
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'center',
-    margin: 10
+    margin: 5,
+    marginBottom: 0
   },
+  image: {
+    width: 150,
+    height: 150,
+    marginTop: 5,
+    marginBottom: 35,
+    marginLeft: "auto",
+    marginRight: "auto",
+  }
 });
